@@ -31,7 +31,7 @@ export const verifyTemporaryHash = async (req, res) => {
             .input('id_usuario', temporal_hash.id_usuario)
             .query('UPDATE Usuarios SET verificado = 1 OUTPUT inserted.* WHERE id = @id_usuario')
 
-        return res.status(200).redirect(`${APP_URL}/public/html/login.html`);
+        return res.status(200).redirect(`https://teachme-learn.netlify.app/public/html/login.html`);
         //.json({ success: true, message: 'Registro confirmado correctamente' })
     } catch (error) {
         console.error('Error al verificar el hash:', error);
